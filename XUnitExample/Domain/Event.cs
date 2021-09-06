@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace XUnitExample
+namespace XUnitExample.Domain
 {
     public class Event
     {

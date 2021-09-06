@@ -1,6 +1,4 @@
-using System;
-
-namespace XUnitExample
+namespace XUnitExample.Domain
 {
     public class Participant
     {

@@ -1,6 +1,7 @@
 using Xunit;
+using XUnitExample.Domain;
 
-namespace XUnitExample.Tests
+namespace XUnitExample.Tests.Domain
 {
     public class EventTest
     {
