@@ -1,5 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Linq;
+using System.Threading.Tasks;
 using XUnitExample.Domain;
 
 namespace XUnitExample.Persistence
@@ -18,9 +19,9 @@ namespace XUnitExample.Persistence
             _context.Events.Add(e);
         }
 
-        public Event GetById(Guid id)
+        public async Task<Event> GetByIdAsync(Guid id)
         {
-            return _context.Events.SingleOrDefault(e => e.Id == id);
+            return await _context.Events.SingleOrDefaultAsync(e => e.Id == id);
         }
     }
 }

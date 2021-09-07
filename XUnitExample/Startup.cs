@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using XUnitExample.Domain;
 using XUnitExample.Persistence;
 
 namespace XUnitExample
@@ -27,6 +28,8 @@ namespace XUnitExample
                     ServerVersion.AutoDetect(Configuration.GetConnectionString("eventDatabase"))
                 )
             );
+
+            services.AddScoped<IEventRepository, EventRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

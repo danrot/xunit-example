@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace XUnitExample.Persistence
 {
-    public sealed class EventContext : DbContext
+    public class EventContext : DbContext
     {
         public DbSet<Event> Events => Set<Event>();
 

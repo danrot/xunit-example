@@ -33,18 +33,18 @@ namespace XUnitExample.Tests.Persistence
         }
 
         [Fact]
-        public void GetByNonExistingId()
+        public async void GetByNonExistingId()
         {
             using (var context = new EventContext(_options))
             {
                 var repository = new EventRepository(context);
 
-                Assert.Null(repository.GetById(Guid.NewGuid()));
+                Assert.Null(await repository.GetByIdAsync(Guid.NewGuid()));
             }
         }
 
         [Fact]
-        public void GetById()
+        public async void GetById()
         {
             Guid eventId1;
 
@@ -62,7 +62,7 @@ namespace XUnitExample.Tests.Persistence
             {
                 var repository = new EventRepository(context);
 
-                var event1 = repository.GetById(eventId1);
+                var event1 = await repository.GetByIdAsync(eventId1);
 
                 Assert.Equal("Test Event", event1.Title);
             }

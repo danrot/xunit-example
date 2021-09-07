@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 
 namespace XUnitExample.Domain
 {
@@ -6,6 +7,6 @@ namespace XUnitExample.Domain
     {
         public void Add(Event e);
 
-        public Event GetById(Guid id);
+        public Task<Event> GetByIdAsync(Guid id);
     }
 }
